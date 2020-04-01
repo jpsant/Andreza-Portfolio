@@ -1,0 +1,62 @@
+@import '../../mixins/mixin.scss';
+
+.header-pagination {
+  z-index: 999;
+  display: flex;
+  position: fixed;
+  width: 80%;
+  height: 114px;
+  background-color: white;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 4px 4px 22px rgba(0,0,0,0.2);
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    align-items: center;
+
+    &-logo {
+      width: 89.94px;
+      height: 91.42px;
+      left: 16px;
+      position: absolute;
+    }
+
+    &-links {
+      display: flex;
+      margin-right: 128px;
+
+      &-h2 {
+        cursor: pointer;
+        color: #2E7E75;
+        margin: 0 28px;
+        font-weight: 400;
+        font-size: 30px;
+        opacity: .5;
+        transition: opacity .3s ease-in-out;
+
+        &-hr {
+          border: 0px solid #2E7E75;
+          margin: 0;
+          width: 0;
+          transition: width .3s ease-in-out;
+        }
+
+        @include respond_to(medium) {
+          margin: 0 15px;
+        }
+      }
+
+      &-h2:hover {
+        opacity: 1 !important;
+
+        .header-pagination__container-links-h2-hr {
+          border: 2px solid #2E7E75 !important;
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

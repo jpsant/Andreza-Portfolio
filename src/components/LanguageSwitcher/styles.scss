@@ -1,0 +1,76 @@
+.switch {
+  position: absolute;
+  width: 48px;
+  height: 24px;
+  right: 128px;
+
+  .input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .euaFlag {
+    position: absolute;
+    top: -75%;
+    left: 110% !important;
+    z-index: 999;
+    height: 62.46px;
+    width: 62.46px;
+  }
+  
+  .brazilFlag {
+    position: absolute !important;
+    top: -75%;
+    right: 110% !important;
+    z-index: 999;
+    height: 62.46px;
+    width: 62.46px;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2BAA9B;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .input:checked+.slider {
+    background-color: #2BAA9B;
+  }
+
+  .input:focus+.slider {
+    box-shadow: 0 0 1px #2BAA9B;
+  }
+
+  .input:checked+.slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
