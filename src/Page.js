@@ -11,11 +11,13 @@ import Contact from './sections/Contact';
 import './global.scss';  //estilizações globais
 
 function LandingPage() {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const [language, setLanguage] = useState(true);
 
   const handlePageChanger = (number) => {
-    setPage(number);
+    if (number !== page) {
+      return setPage(number);
+    }
   }
 
   const handleLanguageChange = () => {
