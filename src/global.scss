@@ -1,8 +1,10 @@
 @import './mixins/mixin.scss';
 @include font('Roboto Regular', '../fonts/Roboto-Regular');
+@include font('Roboto Bold', '../fonts/Roboto-Bold');
 
 body, html {
   margin: 0;
+  overflow-x: hidden;
   font-family: 'Roboto Regular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

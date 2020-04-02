@@ -8,6 +8,28 @@ import LanguageSwitcher from '../LanguageSwitcher'
 export default function Pagination(props) {
   return (
     <>
+      <ul className="pagination">
+        <li className={props.currentPage === 0 ? "selectedPage" : ''}
+          style={{ backgroundColor: props.currentPage === 0 ? '#2BAA9B' : props.currentPage === 2 ? '#2BAA9B' : '' }}
+        >
+          <a onClick={() => props.section(0)}></a>
+        </li>
+        <li className={props.currentPage === 1 ? "selectedPage" : ''}
+          style={{ backgroundColor: props.currentPage === 0 ? '#2BAA9B' : props.currentPage === 2 ? '#2BAA9B' : '' }}
+        >
+          <a onClick={() => props.section(1)}></a>
+        </li>
+        <li className={props.currentPage === 2 ? "selectedPage" : ''}
+          style={{ backgroundColor: props.currentPage === 0 ? '#2BAA9B' : props.currentPage === 2 ? '#2BAA9B' : '' }}
+        >
+          <a onClick={() => props.section(2)}></a>
+        </li>
+        <li className={props.currentPage === 3 ? "selectedPage" : ''}
+          style={{ backgroundColor: props.currentPage === 0 ? '#2BAA9B' : props.currentPage === 2 ? '#2BAA9B' : '' }}
+        >
+          <a onClick={() => props.section(3)}></a>
+        </li>
+      </ul>
       <div className="header-pagination">
         <div className="header-pagination__container">
           <img src={logo} className="header-pagination__container-logo" alt="Cat-Dog Logo" />
@@ -71,7 +93,7 @@ export default function Pagination(props) {
           </div>
           <LanguageSwitcher language={props.languageChanger} />
         </div>
-        
+
       </div>
     </>
   );
