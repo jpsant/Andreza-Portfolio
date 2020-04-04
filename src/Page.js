@@ -8,10 +8,10 @@ import About from './sections/About';
 import Skills from './sections/Skills';
 import Contact from './sections/Contact';
 
-import './global.scss';  //estilizações globais
+import './global.scss';
 
 function LandingPage() {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [language, setLanguage] = useState(true);
 
   const handlePageChanger = (number) => {

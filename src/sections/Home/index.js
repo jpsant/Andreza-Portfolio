@@ -7,8 +7,8 @@ import Paws from '../../assets/svg/paws.svg';
 export default function HomeSection() {
   return (
     <>
-      <img src={HomeShape} className="home-shape" />
-      <img src={Paws} class="home-paws" />
+      <img src={HomeShape} alt="Home Vector Shape" className="home-shape" />
+      <img src={Paws} alt="Little dog paws" className="home-paws" />
       <div className="home-container">
         <div className="home-container__text">
           <h1 className="home-container__text-h1">Andreza</h1>

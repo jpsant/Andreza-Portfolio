@@ -1,16 +1,63 @@
-@import './mixins/mixin.scss';
-@include font('Roboto Regular', '../fonts/Roboto-Regular');
-@include font('Roboto Bold', '../fonts/Roboto-Bold');
+@import "./mixins/mixin.scss";
+@include font("Roboto Regular", "../fonts/Roboto-Regular");
+@include font("Roboto Bold", "../fonts/Roboto-Bold");
 
-body, html {
+body,
+html {
   margin: 0;
   overflow-x: hidden;
-  font-family: 'Roboto Regular';
+  font-family: "Roboto Regular";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 456px;
+  height: 42px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #2baa9b;
+  color: #2baa9b;
+  padding-left: 8px;
+}
+
+textarea {
+  width: 453px;
+  height: 115px;
+  max-height: 115px;
+  min-height: 115px;
+  border-radius: 5px;
+  resize: vertical;
+  border: 1px solid #2baa9b;
+  color: #2baa9b;
+  padding-left: 8px;
+  padding-top: 8px;
+
+  @include respond_to(medium) {
+    max-height: 70px;
+    min-height: 70px;
+  }
+}
+
+input[type="email"]::placeholder {
+  color: #2baa9b;
+  font-family: "Roboto Regular";
+  font-size: 18px;
+}
+
+input[type="text"]::placeholder {
+  color: #2baa9b;
+  font-family: "Roboto Regular";
+  font-size: 18px;
+}
+
+textarea::placeholder {
+  color: #2baa9b;
+  font-family: "Roboto Regular";
+  font-size: 18px;
 }
