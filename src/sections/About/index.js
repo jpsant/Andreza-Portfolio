@@ -22,8 +22,8 @@ export default function AboutSection() {
         </h2>
       </div>
       <div className="about-container__images">
-        <img className="about-container__images-dog" src={DogPhoto} alt="Dog Photo"/>
-        <img className="about-container__images-cat" src={CatPhoto} alt="Cat Photo"/>
+        <img className="about-container__images-dog" src={DogPhoto} alt="Dog logo"/>
+        <img className="about-container__images-cat" src={CatPhoto} alt="Cat logo"/>
       </div>
     </div>
   )
