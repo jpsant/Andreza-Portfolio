@@ -9,11 +9,11 @@
 
   &__title {
     position: absolute;
-    top: 20%;
+    top: 25%;
     color: white;
 
     @include respond_to(medium) {
-      top: 22%;
+      top: 26%;
     }
 
     h1 {
@@ -89,7 +89,7 @@
       align-self: center;
       justify-content: center;
 
-      input[type="email"] {
+      input[type="text"] {
         margin: 16px 0;
       }
 

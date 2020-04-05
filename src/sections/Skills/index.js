@@ -7,12 +7,12 @@ import Cat from '../../assets/svg/cat.svg'
 import Paw from '../../assets/svg/paw.svg'
 import Registration from '../../assets/svg/registration.svg'
 
-export default function SkillsSection() {
+export default function SkillsSection(props) {
   return (
     <div className="skills-container">
       <div className="skills-container__title">
         <h1 className="skills-container__title-h1">
-          Especialidades<img src={CrossLogo} alt="Cross Logo" />
+          {props.language ? 'Especialidades' : 'Specialties'}<img src={CrossLogo} alt="Cross Logo" />
         </h1>
       </div>
       <div className="skills-container__skills">

@@ -24,6 +24,7 @@ input[type="email"] {
   border: 1px solid #2baa9b;
   color: #2baa9b;
   padding-left: 8px;
+  font-size: 18px;
 }
 
 textarea {
@@ -37,6 +38,7 @@ textarea {
   color: #2baa9b;
   padding-left: 8px;
   padding-top: 8px;
+  font-size: 18px;
 
   @include respond_to(medium) {
     max-height: 70px;
