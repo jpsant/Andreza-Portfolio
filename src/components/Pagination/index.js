@@ -66,7 +66,7 @@ export default function Pagination(props) {
               className="header-pagination__container-links-h2"
               onClick={() => props.section(2)}
             >
-              {props.language ? 'Especialidades' : 'Skills'}
+              {props.language ? 'Especialidades' : 'Specialties'}
 
               <hr className="header-pagination__container-links-h2-hr"
                 style={{
