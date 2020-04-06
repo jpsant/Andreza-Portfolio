@@ -63,3 +63,8 @@ textarea::placeholder {
   font-family: "Roboto Regular";
   font-size: 18px;
 }
+
+.text-animated {
+  transform: translateX(-10%) !important;
+  opacity: 0 !important;
+}

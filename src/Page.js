@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import ReactPageScroller from 'react-page-scroller';
 
 import Pagination from './components/Pagination';
@@ -10,39 +10,43 @@ import Contact from './sections/Contact';
 
 import './global.scss';
 
-function LandingPage() {
-  const [page, setPage] = useState(0);
-  const [language, setLanguage] = useState(true);
+class LandingPage extends Component {
 
-  const handlePageChanger = (number) => {
-    if (number !== page) {
-      return setPage(number);
-    }
+  state = {
+    currentPage: null,
+    language: true
   }
 
-  const handleLanguageChange = () => {
-    setLanguage(!language);
+  handlePageChanger = (number) => {
+    this.setState({currentPage: number})
   }
 
-  return (
-    <>
-      <Pagination
-        currentPage={page}
-        language={language}
-        languageChanger={handleLanguageChange}
-        section={(number) => handlePageChanger(number)}
-      />
-      <ReactPageScroller
-        pageOnChange={handlePageChanger}
-        customPageNumber={page}
-      >
-        <Home language={language} />
-        <About language={language} />
-        <Skills language={language} />
-        <Contact language={language} />
-      </ReactPageScroller>
-    </>
-  )
+  handleLanguageChange = () => {
+    const newLanguage = !this.state.language;
+    this.setState({language: newLanguage});
+  }
+
+  render () {
+    return (
+      <>
+        <Pagination
+          currentPage={this.state.currentPage}
+          language={this.state.language}
+          languageChanger={this.handleLanguageChange}
+          section={(number) => this.handlePageChanger(number)}
+        />
+        <ReactPageScroller
+          pageOnChange={this.handlePageChanger}
+          customPageNumber={this.state.currentPage}
+        >
+          <Home language={this.state.language} currentPage={this.state.currentPage} />
+          <About language={this.state.language} currentPage={this.state.currentPage} />
+          <Skills language={this.state.language} currentPage={this.state.currentPage} />
+          <Contact language={this.state.language} currentPage={this.state.currentPage} />
+        </ReactPageScroller>
+      </>
+    )
+  }
 }
 
 export default LandingPage;

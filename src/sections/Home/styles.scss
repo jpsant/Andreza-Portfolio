@@ -1,11 +1,11 @@
-@import '../../mixins/mixin.scss';
+@import "../../mixins/mixin.scss";
 
 .home-shape {
   position: absolute;
   z-index: 99;
   right: -3px;
   bottom: 0;
-  
+
   @include respond_to(medium) {
     width: 565.73px;
   }
@@ -28,8 +28,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  background-color: #2BAA9B;
-  
+  background-color: #2baa9b;
+
   &__text {
     padding-left: 194px;
     padding-top: 64px;
@@ -39,11 +39,27 @@
     }
 
     &-h1 {
-      font-family: 'Roboto Bold';
+      font-family: "Roboto Bold";
       font-weight: Bold;
       font-size: 100px;
       margin: 0;
+      opacity: 0;
       line-height: 100px;
+
+      @include respond_to(medium) {
+        line-height: 92px;
+      }
+    }
+
+    &-h1-animated {
+      font-family: "Roboto Bold";
+      font-weight: Bold;
+      font-size: 100px;
+      margin: 0;
+      opacity: 0;
+      transform: translateX(-15%);
+      line-height: 100px;
+      animation: textAnimationIn 0.8s forwards ease-in-out 0.2s;
 
       @include respond_to(medium) {
         line-height: 92px;
@@ -61,5 +77,19 @@
         font-size: 35px;
       }
     }
+  }
+}
+
+@keyframes textAnimationIn {
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes textAnimationOut {
+  100% {
+    opacity: 0;
+    transform: translateX(-15%);
   }
 }
