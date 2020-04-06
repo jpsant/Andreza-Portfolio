@@ -64,7 +64,122 @@ textarea::placeholder {
   font-size: 18px;
 }
 
-.text-animated {
-  transform: translateX(-10%) !important;
-  opacity: 0 !important;
+/* SECTION - 1 */
+
+@keyframes textAnimationIn {
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes textAnimationOut {
+  100% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+}
+
+@keyframes headerAnimationIn {
+  100% {
+    opacity: 1;
+    top: 32px;
+  }
+}
+
+@keyframes pageSelectorIn {
+  100% {
+    opacity: 1;
+    right: 30px;
+  }
+}
+
+/* SECTION - 2 */
+
+@keyframes dogPhotoIn {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes dogPhotoOut {
+  100% {
+    transform: translateY(-72px);
+    opacity: 0;
+  }
+}
+
+@keyframes catPhotoIn {
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes catPhotoOut {
+  100% {
+    transform: translateX(-72px);
+    opacity: 0;
+  }
+}
+
+/* SECTION - 3 */
+
+@keyframes skillsTitleIn {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes skillsTitleOut {
+  100% {
+    transform: translateY(-64px);
+    opacity: 0;
+  }
+}
+
+@keyframes skillCardsIn {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes skillCardsOut {
+  100% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+}
+
+/* SECTION - 4 */
+
+@keyframes socialContainerIn {
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes socialContainerOut {
+  100% {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+}
+
+@keyframes formContainerIn {
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes formContainerOut {
+  100% {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
 }

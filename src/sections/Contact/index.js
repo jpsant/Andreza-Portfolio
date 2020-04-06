@@ -8,7 +8,7 @@ import Linkedin from '../../assets/svg/linkedin.svg';
 import Twitter from '../../assets/svg/twitter.svg';
 import Send from '../../assets/svg/send.svg'
 
-export default function ContactSection({ language }) {
+export default function ContactSection({ language, currentPage }) {
   const [email, setEmail] = useState('');
   const [subject, setsubject] = useState('');
   const [body, setBody] = useState('');
@@ -21,10 +21,14 @@ export default function ContactSection({ language }) {
   return (
     <div className="contact-container">
       <div className="contact-container__title">
-        <h1>{language ? 'Entre em Contato!' : 'Contact me!'}</h1>
+        <h1 className={currentPage === 3 ? "contact-container__title-h1 contact-container__title-h1-animateIn"
+          : "contact-container__title-h1 contact-container__title-h1-animateOut"}>
+          {language ? 'Entre em Contato!' : 'Contact me!'}
+        </h1>
       </div>
       <div className="contact-container__info">
-        <div className="contact-container__info__social">
+        <div className={currentPage === 3 ? "contact-container__info__social contact-container__info__social-animateIn"
+          : "contact-container__info__social contact-container__info__social-animateOut"}>
           <h1>{language ? 'Siga-me nas redes sociais.' : 'Follow me on social media.'}</h1>
           <div className="contact-container__info__social-container">
             <a href="#">
@@ -42,7 +46,9 @@ export default function ContactSection({ language }) {
           </div>
         </div>
         <img className="contact-container__info__divider" src={ContactDivider} alt="Contact section divider" />
-        <form onSubmit={handleEmailForm} className="contact-container__info__form">
+        <form onSubmit={handleEmailForm}
+          className={currentPage === 3 ? "contact-container__info__form contact-container__info__form-animateIn"
+            : "contact-container__info__form contact-container__info__form-animateOut"}>
           <input onChange={e => setEmail(e.target.value)} placeholder={language ? 'Seu email' : 'Your email'} type="email" />
           <input onChange={e => setsubject(e.target.value)} placeholder={language ? 'Assunto' : 'Subject'} type="text" />
           <textarea onChange={e => setBody(e.target.value)} placeholder={language ? 'Mensagem' : 'Message'} />

@@ -11,9 +11,18 @@ export default function HomeSection({ language, currentPage }) {
       <img src={Paws} alt="Little dog paws" className="home-paws" />
       <div className="home-container">
         <div className="home-container__text">
-          <h1 className={ currentPage === 0 ? "home-container__text-h1-animated" : "home-container__text-h1" }>Andreza</h1>
-          {/* <h1 className="home-container__text-h1">Fernandes</h1> */}
-          {/* <h2 className="home-container__text-h2">{language ? 'Médica Veterinária' : 'Veterinarian'}</h2> */}
+          <h1 className={currentPage === 0 ? "home-container__text-title home-container__text-title-animateIn"
+            : "home-container__text-title home-container__text-title-animateOut"}>
+            Andreza
+          </h1>
+          <h1 className={currentPage === 0 ? "home-container__text-subtitle home-container__text-subtitle-animateIn"
+            : "home-container__text-subtitle home-container__text-subtitle-animateOut"}>
+            Fernandes
+            </h1>
+          <h2 className={currentPage === 0 ? "home-container__text-h2 home-container__text-h2-animateIn" 
+          : "home-container__text-h2 home-container__text-h2-animateOut"}>
+            {language ? 'Médica Veterinária' : 'Veterinarian'}
+          </h2>
         </div>
       </div>
     </>

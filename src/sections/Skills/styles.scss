@@ -22,10 +22,25 @@
       font-weight: 600;
       color: #2baa9b;
       margin: 0;
+      opacity: 0;
+      transform: translateY(-64px);
+      animation: skillsTitleIn 0.7s forwards 0.7s;
 
       @include respond_to(medium) {
         font-size: 80px;
       }
+    }
+
+    &-h1-animateIn {
+      opacity: 0;
+      transform: translateY(-64px);
+      animation: skillsTitleIn 0.7s forwards 0.7s;
+    }
+
+    &-h1-animateOut {
+      opacity: 1;
+      transform: translateY(0px);
+      animation: skillsTitleOut 0.7s forwards 0.2s;
     }
   }
 
@@ -64,6 +79,18 @@
           }
         }
       }
+    }
+
+    .skill-1-animateIn {
+      transform: translateY(60px);
+      opacity: 0;
+      animation: skillCardsIn 0.7s forwards 0.8s
+    }
+
+    .skill-1-animateOut {
+      transform: translateY(0px);
+      opacity: 1;
+      animation: skillCardsOut 0.7s forwards 0.2s
     }
 
     &__skill-1:hover {
@@ -107,6 +134,18 @@
       }
     }
 
+    .skill-2-animateIn {
+      transform: translateY(60px);
+      opacity: 0;
+      animation: skillCardsIn 0.7s forwards 0.9s
+    }
+
+    .skill-2-animateOut {
+      transform: translateY(0px);
+      opacity: 1;
+      animation: skillCardsOut 0.7s forwards 0.2s
+    }
+
     &__skill-2:hover {
       filter: brightness(100%);
 
@@ -145,6 +184,18 @@
           }
         }
       }
+    }
+
+    .skill-3-animateIn {
+      transform: translateY(60px);
+      opacity: 0;
+      animation: skillCardsIn 0.7s forwards 1s
+    }
+
+    .skill-3-animateOut {
+      transform: translateY(0px);
+      opacity: 1;
+      animation: skillCardsOut 0.7s forwards 0.2s
     }
 
     &__skill-3:hover {
@@ -186,6 +237,18 @@
           }
         }
       }
+    }
+
+    .skill-4-animateIn {
+      transform: translateY(60px);
+      opacity: 0;
+      animation: skillCardsIn 0.7s forwards 1.1s
+    }
+
+    .skill-4-animateOut {
+      transform: translateY(0px);
+      opacity: 1;
+      animation: skillCardsOut 0.7s forwards 0.2s
     }
 
     &__skill-4:hover {

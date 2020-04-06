@@ -16,7 +16,7 @@
       top: 26%;
     }
 
-    h1 {
+    &-h1 {
       font-size: 95px;
       margin: 0;
       letter-spacing: 1px;
@@ -26,16 +26,16 @@
       }
     }
 
-    h2 {
-      text-align: center;
-      font-weight: 400;
-      font-size: 40px;
-      margin: 16px 0;
+    &-h1-animateIn {
+      opacity: 0;
+      transform: translateY(-64px);
+      animation: skillsTitleIn 0.7s forwards 0.7s;
+    }
 
-      @include respond_to(medium) {
-        font-size: 30px;
-        margin: 8px 0;
-      }
+    &-h1-animateOut {
+      opacity: 1;
+      transform: translateY(0px);
+      animation: skillsTitleOut 0.7s forwards 0.2s;
     }
   }
 
@@ -60,6 +60,18 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      &-animateIn {
+        transform: translateX(80px);
+        opacity: 0;
+        animation: socialContainerIn 0.7s forwards 0.7s;
+      }
+
+      &-animateOut {
+        transform: translateX(0px);
+        opacity: 1;
+        animation: socialContainerOut 0.7s forwards 0.2s;
+      }
 
       h1 {
         font-size: 40px;
@@ -89,6 +101,18 @@
       align-self: center;
       justify-content: center;
 
+      &-animateIn {
+        transform: translateX(-80px);
+        opacity: 0;
+        animation: formContainerIn 0.7s forwards 0.7s;
+      }
+
+      &-animateOut {
+        transform: translateX(0px);
+        opacity: 1;
+        animation: formContainerOut 0.7s forwards 0.2s;
+      }
+
       input[type="text"] {
         margin: 16px 0;
       }
@@ -106,13 +130,13 @@
           width: 132px;
           height: 43px;
           font-size: 18px;
-          background-color: #2BAA9B;
+          background-color: #2baa9b;
           color: white;
           border: transparent;
           border-radius: 5px;
           margin-top: 8px;
           cursor: pointer;
-  
+
           img {
             padding: 0 6px;
           }

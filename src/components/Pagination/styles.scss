@@ -1,12 +1,14 @@
 @import "../../mixins/mixin.scss";
 
 .pagination {
+  opacity: 0;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 30px;
+  right: 0px;
   list-style: none;
   z-index: 9999;
+  animation: pageSelectorIn .8s forwards .9s;
 
   li {
     position: relative;
@@ -42,6 +44,8 @@
 }
 
 .header-pagination {
+  top: 0px;
+  opacity: 0;
   z-index: 999;
   display: flex;
   position: fixed;
@@ -50,11 +54,11 @@
   height: 87px;
   max-height: 87px;
   background-color: white;
-  top: 32px;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.2);
   justify-content: center;
+  animation: headerAnimationIn .8s forwards .6s;
 
   &__container {
     display: flex;
