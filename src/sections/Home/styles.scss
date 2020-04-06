@@ -1,11 +1,11 @@
-@import '../../mixins/mixin.scss';
+@import "../../mixins/mixin.scss";
 
 .home-shape {
   position: absolute;
   z-index: 99;
   right: -3px;
   bottom: 0;
-  
+
   @include respond_to(medium) {
     width: 565.73px;
   }
@@ -28,8 +28,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  background-color: #2BAA9B;
-  
+  background-color: #2baa9b;
+
   &__text {
     padding-left: 194px;
     padding-top: 64px;
@@ -38,8 +38,8 @@
       padding-left: 146px;
     }
 
-    &-h1 {
-      font-family: 'Roboto Bold';
+    &-title {
+      font-family: "Roboto Bold";
       font-weight: Bold;
       font-size: 100px;
       margin: 0;
@@ -48,6 +48,42 @@
       @include respond_to(medium) {
         line-height: 92px;
       }
+    }
+
+    &-title-animateIn {
+      opacity: 0;
+      transform: translateX(-25%);
+      animation: textAnimationIn 0.7s forwards 1s;
+    }
+
+    &-title-animateOut {
+      opacity: 1;
+      transform: translateX(0%);
+      animation: textAnimationOut 0.3s forwards 0.2s;
+    }
+
+    &-subtitle {
+      font-family: "Roboto Bold";
+      font-weight: Bold;
+      font-size: 100px;
+      margin: 0;
+      line-height: 100px;
+
+      @include respond_to(medium) {
+        line-height: 92px;
+      }
+    }
+
+    &-subtitle-animateIn {
+      opacity: 0;
+      transform: translateX(-25%);
+      animation: textAnimationIn 0.7s forwards 1.2s;
+    }
+
+    &-subtitle-animateOut {
+      transform: translateX(0%);
+      opacity: 1;
+      animation: textAnimationOut 0.3s forwards 0.2s;
     }
 
     &-h2 {
@@ -60,6 +96,18 @@
         margin-top: 10px;
         font-size: 35px;
       }
+    }
+
+    &-h2-animateIn {
+      opacity: 0;
+      transform: translateX(-15%);
+      animation: textAnimationIn 0.7s forwards 1.4s;
+    }
+
+    &-h2-animateOut {
+      transform: translateX(0%);
+      opacity: 1;
+      animation: textAnimationOut 0.3s forwards 0.2s;
     }
   }
 }
