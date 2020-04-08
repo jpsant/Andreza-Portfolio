@@ -20,6 +20,10 @@
     transition: all 0.3s;
     opacity: 0.6;
 
+    @include respond_to(mobile) {
+      background-color: #fff !important;
+    }
+
     &:hover {
       transform: scale(1.2);
       opacity: 1;
@@ -41,6 +45,7 @@
 .selectedPage {
   transform: scale(1.6);
   opacity: 1 !important;
+
 }
 
 .header-pagination {
@@ -59,6 +64,10 @@
   box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.2);
   justify-content: center;
   animation: headerAnimationIn .8s forwards .6s;
+
+  @include respond_to(small) {
+    display: none;
+  }
 
   &__container {
     display: flex;

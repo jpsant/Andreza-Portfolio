@@ -6,26 +6,19 @@ import Facebook from '../../assets/svg/facebook.svg';
 import Instagram from '../../assets/svg/instagram.svg';
 import Linkedin from '../../assets/svg/linkedin.svg';
 import Twitter from '../../assets/svg/twitter.svg';
-import Send from '../../assets/svg/send.svg'
+
+import Form from '../../components/ContactForm';
 
 export default function ContactSection({ language, currentPage }) {
-  const [email, setEmail] = useState('');
-  const [subject, setsubject] = useState('');
-  const [body, setBody] = useState('');
-
-  const handleEmailForm = (e) => {
-    e.preventDefault();
-    window.open(`mailto:${email}?subject=${subject}&body=${body}`);
-  }
-
   return (
     <div className="contact-container">
       <div className="contact-container__title">
         <h1 className={currentPage === 3 ? "contact-container__title-h1 contact-container__title-h1-animateIn"
           : "contact-container__title-h1 contact-container__title-h1-animateOut"}>
-          {language ? 'Entre em Contato!' : 'Contact me!'}
+          {language ? 'Entre em Contato !' : 'Contact me !'}
         </h1>
       </div>
+
       <div className="contact-container__info">
         <div className={currentPage === 3 ? "contact-container__info__social contact-container__info__social-animateIn"
           : "contact-container__info__social contact-container__info__social-animateOut"}>
@@ -46,18 +39,34 @@ export default function ContactSection({ language, currentPage }) {
           </div>
         </div>
         <img className="contact-container__info__divider" src={ContactDivider} alt="Contact section divider" />
-        <form onSubmit={handleEmailForm}
-          className={currentPage === 3 ? "contact-container__info__form contact-container__info__form-animateIn"
-            : "contact-container__info__form contact-container__info__form-animateOut"}>
-          <input onChange={e => setEmail(e.target.value)} placeholder={language ? 'Seu email' : 'Your email'} type="email" />
-          <input onChange={e => setsubject(e.target.value)} placeholder={language ? 'Assunto' : 'Subject'} type="text" />
-          <textarea onChange={e => setBody(e.target.value)} placeholder={language ? 'Mensagem' : 'Message'} />
-          <div className="contact-container__info__form-button-container">
-            <button className="contact-container__info__form-button-container-send-button" type="submit">
-              {language ? 'Enviar' : 'Send'} <img src={Send} alt="Send email icon" />
-            </button>
+        <Form page={currentPage} language={language} />
+      </div>
+
+      <div className="contact-container__info-mobile">
+
+        <div className={currentPage === 3 ? "contact-container__info-mobile-social contact-container__info-mobile-social-animateIn"
+        : "contact-container__info-mobile-social contact-container__info-mobile-social-animateOut"}>
+          <h1>{language ? 'Siga-me nas redes sociais.' : 'Follow me on social media.'}</h1>
+          <div className="contact-container__info-mobile-social-container">
+            <a href="#">
+              <img src={Facebook} alt="" />
+            </a>
+            <a href="#">
+              <img src={Instagram} alt="" />
+            </a>
+            <a href="#">
+              <img src={Linkedin} alt="" />
+            </a>
+            <a href="#">
+              <img src={Twitter} alt="" />
+            </a>
           </div>
-        </form>
+        </div>
+
+        <div className={currentPage === 3 ? "contact-container__info-mobile-form contact-container__info-mobile-form-animateIn"
+        : "contact-container__info-mobile-form contact-container__info-mobile-form-animateOut"}>
+          <Form page={currentPage} language={language} />
+        </div>
       </div>
     </div>
   )

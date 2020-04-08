@@ -1,0 +1,57 @@
+@import '../../mixins/mixin.scss';
+
+.form {
+  grid-column: 3/4;
+  display: grid;
+  align-self: center;
+  justify-content: center;
+
+  &-animateIn {
+    transform: translateX(-80px);
+    opacity: 0;
+    animation: formContainerIn 0.7s forwards 0.7s;
+  }
+
+  &-animateOut {
+    transform: translateX(0px);
+    opacity: 1;
+    animation: formContainerOut 0.7s forwards 0.2s;
+  }
+
+  input[type="text"] {
+    margin: 16px 0;
+  }
+
+  &-button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 463px;
+    max-width: 463px;
+
+    &-send-button {
+      display: flex;
+      font-family: "Roboto Regular";
+      align-items: center;
+      justify-content: center;
+      width: 132px;
+      height: 43px;
+      font-size: 18px;
+      background-color: #2baa9b;
+      color: white;
+      border: transparent;
+      border-radius: 5px;
+      margin-top: 8px;
+      cursor: pointer;
+
+      @include respond_to(mobile) {
+        font-size: 19px;
+        font-weight: bold;
+        margin: 8px;
+      }
+
+      img {
+        padding: 0 6px;
+      }
+    }
+  }
+}

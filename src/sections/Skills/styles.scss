@@ -7,12 +7,20 @@
   justify-content: center;
   background-color: white;
 
+  @include respond_to(mobile) {
+    background-color: #2baa9b;
+  }
+
   &__title {
     position: absolute;
     top: 25%;
 
     @include respond_to(medium) {
       top: 22%;
+    }
+
+    @include respond_to(mobile) {
+      top: 7%
     }
 
     &-h1 {
@@ -24,10 +32,15 @@
       margin: 0;
       opacity: 0;
       transform: translateY(-64px);
-      animation: skillsTitleIn 0.7s forwards 0.7s;
 
       @include respond_to(medium) {
         font-size: 80px;
+      }
+
+      @include respond_to(mobile) {
+        color: white;
+        font-size: 50px;
+        flex-direction: column-reverse;
       }
     }
 
@@ -35,6 +48,10 @@
       opacity: 0;
       transform: translateY(-64px);
       animation: skillsTitleIn 0.7s forwards 0.7s;
+
+      @include respond_to(mobile) {
+        animation: skillsTitleIn 0.7s forwards 0.4s;
+      }
     }
 
     &-h1-animateOut {
@@ -84,7 +101,11 @@
     .skill-1-animateIn {
       transform: translateY(60px);
       opacity: 0;
-      animation: skillCardsIn 0.7s forwards 0.8s
+      animation: skillCardsIn 0.7s forwards 0.8s;
+
+      @include respond_to(mobile) {
+        animation: skillCardsIn 0.7s forwards 0.5s;
+      }
     }
 
     .skill-1-animateOut {
@@ -95,6 +116,7 @@
 
     &__skill-1:hover {
       filter: brightness(100%);
+      box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.2);
 
       .skills-container__skills__skill-1-image {
         transform: translateY(-80%);
@@ -118,6 +140,10 @@
       @include respond_to(medium) {
         width: 250px;
         height: 250px;
+      }
+
+      @include respond_to(mobile) {
+        display: none;
       }
 
       &-image {
@@ -148,6 +174,7 @@
 
     &__skill-2:hover {
       filter: brightness(100%);
+      box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.2);
 
       .skills-container__skills__skill-2-image {
         transform: translateY(-80%);
@@ -170,6 +197,10 @@
       @include respond_to(medium) {
         width: 250px;
         height: 250px;
+      }
+
+      @include respond_to(mobile) {
+        display: none;
       }
 
       &-image {
@@ -200,6 +231,7 @@
 
     &__skill-3:hover {
       filter: brightness(100%);
+      box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.2);
 
       .skills-container__skills__skill-3-image {
         transform: translateY(-80%);
@@ -223,6 +255,10 @@
       @include respond_to(medium) {
         width: 250px;
         height: 250px;
+      }
+
+      @include respond_to(mobile) {
+        display: none;
       }
 
       &-image {
@@ -253,6 +289,7 @@
 
     &__skill-4:hover {
       filter: brightness(100%);
+      box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.2);
 
       .skills-container__skills__skill-4-image {
         transform: translateY(-80%);

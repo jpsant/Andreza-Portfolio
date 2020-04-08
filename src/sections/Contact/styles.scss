@@ -16,6 +16,10 @@
       top: 26%;
     }
 
+    @include respond_to(mobile) {
+      top: 8%;
+    }
+
     &-h1 {
       font-size: 95px;
       margin: 0;
@@ -23,6 +27,11 @@
 
       @include respond_to(medium) {
         font-size: 75px;
+      }
+
+      @include respond_to(mobile) {
+        font-size: 50px;
+        text-align: center;
       }
     }
 
@@ -52,6 +61,10 @@
     @include respond_to(medium) {
       height: 304px;
       margin: 16px;
+    }
+
+    @include respond_to(mobile) {
+      display: none;
     }
 
     &__social {
@@ -94,53 +107,84 @@
       justify-self: center;
       height: 90%;
     }
+  }
 
-    &__form {
-      grid-column: 3/4;
-      display: grid;
-      align-self: center;
-      justify-content: center;
+  &__info-mobile {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+
+    &-social {
+      background-color: white;
+      margin: 16px;
+      padding: 36px 16px;
+      border-radius: 5px;
+      display: none;
+
+      &-animateIn {
+        transform: translateX(80px);
+        opacity: 0;
+        animation: socialContainerIn 0.7s forwards 0.7s;
+      }
+
+      &-animateOut {
+        transform: translateX(0px);
+        opacity: 1;
+        animation: socialContainerOut 0.7s forwards 0.2s;
+      }
+
+
+      @include respond_to(mobile) {
+        display: block;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 25px;
+        color: #2baa9b;
+        margin-top: 0;
+        margin-bottom: 32px;
+      }
+
+      &-container {
+        display: flex;
+        justify-content: center;
+
+        a {
+          margin: 0 8px;
+
+          img {
+            height: 55px;
+            width: 55px;
+          }
+        }
+      }
+    }
+
+    &-form {
+      align-self: flex-end;
+      display: none;
+      background-color: white;
+      width: auto;
 
       &-animateIn {
         transform: translateX(-80px);
         opacity: 0;
         animation: formContainerIn 0.7s forwards 0.7s;
       }
-
+    
       &-animateOut {
         transform: translateX(0px);
         opacity: 1;
         animation: formContainerOut 0.7s forwards 0.2s;
       }
+    
 
-      input[type="text"] {
-        margin: 16px 0;
-      }
-
-      &-button-container {
-        display: flex;
-        justify-content: flex-end;
-        width: 463px;
-        max-width: 463px;
-
-        &-send-button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 132px;
-          height: 43px;
-          font-size: 18px;
-          background-color: #2baa9b;
-          color: white;
-          border: transparent;
-          border-radius: 5px;
-          margin-top: 8px;
-          cursor: pointer;
-
-          img {
-            padding: 0 6px;
-          }
-        }
+      @include respond_to(mobile) {
+        display: block;
+        background-color: white;
+        margin: 16px;
+        border-radius: 5px;
       }
     }
   }

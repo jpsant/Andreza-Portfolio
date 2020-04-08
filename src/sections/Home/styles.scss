@@ -9,6 +9,61 @@
   @include respond_to(medium) {
     width: 565.73px;
   }
+
+  @include respond_to(small) {
+    display: none;
+  }
+}
+
+.mobile-home-shape-up {
+  display: none;
+
+  @include respond_to(mobile) {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+}
+
+.mobile-home-shape-down {
+  display: none;
+
+  @include respond_to(mobile) {
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+  }
+}
+
+.mobile-logo {
+  display: none;
+
+  @include respond_to(mobile) {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.mobile-logo-animateIn {
+  opacity: 0;
+  transform: translateX(-25%);
+  animation: textAnimationIn 0.7s forwards 1s;
+
+  @include respond_to(mobile) {
+    animation: textAnimationIn 0.7s forwards .5s;
+  }
+}
+
+.mobile-logo-animateOut {
+  opacity: 1;
+  transform: translateX(0%);
+  animation: textAnimationOut 0.3s forwards 0.2s;
 }
 
 .home-paws {
@@ -18,6 +73,10 @@
 
   @include respond_to(medium) {
     width: 170px;
+  }
+
+  @include respond_to(mobile) {
+    width: 100px;
   }
 }
 
@@ -30,12 +89,22 @@
   justify-content: flex-start;
   background-color: #2baa9b;
 
+  @include respond_to(mobile) {
+    justify-content: center;
+  }
+
   &__text {
     padding-left: 194px;
     padding-top: 64px;
 
     @include respond_to(medium) {
       padding-left: 146px;
+    }
+
+    @include respond_to(mobile) {
+      justify-content: center;
+      text-align: center;
+      padding: 0 10px;
     }
 
     &-title {
@@ -48,12 +117,20 @@
       @include respond_to(medium) {
         line-height: 92px;
       }
+
+      @include respond_to(mobile) {
+        font-size: 80px;
+      }
     }
 
     &-title-animateIn {
       opacity: 0;
       transform: translateX(-25%);
       animation: textAnimationIn 0.7s forwards 1s;
+
+      @include respond_to(mobile) { 
+        animation: textAnimationIn 0.7s forwards .5s;
+      }
     }
 
     &-title-animateOut {
@@ -72,12 +149,21 @@
       @include respond_to(medium) {
         line-height: 92px;
       }
+
+      @include respond_to(mobile) {
+        font-size: 80px;
+        line-height: 60px;
+      }
     }
 
     &-subtitle-animateIn {
       opacity: 0;
       transform: translateX(-25%);
       animation: textAnimationIn 0.7s forwards 1.2s;
+
+      @include respond_to(mobile) {
+        animation: textAnimationIn 0.7s forwards .7s;
+      }
     }
 
     &-subtitle-animateOut {
@@ -102,6 +188,10 @@
       opacity: 0;
       transform: translateX(-15%);
       animation: textAnimationIn 0.7s forwards 1.4s;
+
+      @include respond_to(mobile) { 
+        animation: textAnimationIn 0.7s forwards .9s;
+      }
     }
 
     &-h2-animateOut {
