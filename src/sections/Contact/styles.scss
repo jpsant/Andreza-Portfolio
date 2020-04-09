@@ -17,7 +17,7 @@
     }
 
     @include respond_to(mobile) {
-      top: 8%;
+      top: 110px;
     }
 
     &-h1 {
@@ -30,7 +30,7 @@
       }
 
       @include respond_to(mobile) {
-        font-size: 50px;
+        font-size: 37px;
         text-align: center;
       }
     }
@@ -117,7 +117,7 @@
     &-social {
       background-color: white;
       margin: 16px;
-      padding: 36px 16px;
+      padding: 16px 16px;
       border-radius: 5px;
       display: none;
 
@@ -162,10 +162,12 @@
     }
 
     &-form {
+      justify-items: center;
       align-self: flex-end;
       display: none;
       background-color: white;
       width: auto;
+      padding: 8px;
 
       &-animateIn {
         transform: translateX(-80px);
@@ -183,7 +185,7 @@
       @include respond_to(mobile) {
         display: block;
         background-color: white;
-        margin: 16px;
+        margin: 8px 16px;
         border-radius: 5px;
       }
     }

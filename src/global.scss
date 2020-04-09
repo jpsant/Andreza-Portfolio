@@ -28,7 +28,7 @@ input[type="email"] {
 
   @include respond_to(mobile) {
     width: auto;
-    margin: 8px !important;
+    margin: 8px 12px !important;
   }
 }
 
@@ -53,7 +53,7 @@ textarea {
 
   @include respond_to(mobile) {
     width: auto;
-    margin: 8px;
+    margin: 8px 12px;
   }
 }
 

@@ -2,6 +2,7 @@ $breakpoints: (
   'medium': (max-width: 1367px),
   'small': (max-width: 850px),
   'mobile': (max-width: 500px),
+  'mobile-medium': (max-width: 330px),
 ) !default;
 
 @mixin respond-to($breakpoint) {

@@ -20,7 +20,7 @@
     }
 
     @include respond_to(mobile) {
-      top: 7%
+      top: 18%
     }
 
     &-h1 {
@@ -39,8 +39,14 @@
 
       @include respond_to(mobile) {
         color: white;
-        font-size: 50px;
+        font-size: 40px;
         flex-direction: column-reverse;
+      }
+
+      img {
+        @include respond_to(mobile) {
+          width: 150px;
+        }
       }
     }
 
@@ -66,6 +72,10 @@
     align-items: flex-end;
     padding-bottom: 56px;
 
+    @include respond_to(mobile) {
+      padding-bottom: 80px;
+    }
+
     &__skill-1 {
       display: flex;
       position: relative;
@@ -82,6 +92,11 @@
       @include respond_to(medium) {
         width: 250px;
         height: 250px;
+      }
+
+      @include respond_to(mobile) {
+       width: 200px;
+       height: 200px;
       }
 
       &-image {

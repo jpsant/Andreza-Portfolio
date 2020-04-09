@@ -2,9 +2,14 @@
 
 .form {
   grid-column: 3/4;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-self: center;
-  justify-content: center;
+  justify-items: flex-start;
+
+  @include respond_to(mobile) {
+    width: 320px;
+  }
 
   &-animateIn {
     transform: translateX(-80px);
@@ -24,9 +29,7 @@
 
   &-button-container {
     display: flex;
-    justify-content: flex-end;
-    width: 463px;
-    max-width: 463px;
+    justify-content: center;
 
     &-send-button {
       display: flex;

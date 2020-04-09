@@ -13,7 +13,7 @@ import './global.scss';
 class LandingPage extends Component {
 
   state = {
-    currentPage: 3,
+    currentPage: 0,
     language: true
   }
 

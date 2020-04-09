@@ -91,6 +91,7 @@
 
   @include respond_to(mobile) {
     justify-content: center;
+    align-items: center;
   }
 
   &__text {
@@ -105,6 +106,7 @@
       justify-content: center;
       text-align: center;
       padding: 0 10px;
+      transform: translateY(-150px);
     }
 
     &-title {
@@ -119,7 +121,8 @@
       }
 
       @include respond_to(mobile) {
-        font-size: 80px;
+        font-size: 60px;
+        line-height: 65px;
       }
     }
 
@@ -151,8 +154,8 @@
       }
 
       @include respond_to(mobile) {
-        font-size: 80px;
-        line-height: 60px;
+        font-size: 60px;
+        line-height: 40px;
       }
     }
 
