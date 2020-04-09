@@ -15,7 +15,7 @@ export default function ContactSection({ language, currentPage }) {
       <div className="contact-container__title">
         <h1 className={currentPage === 3 ? "contact-container__title-h1 contact-container__title-h1-animateIn"
           : "contact-container__title-h1 contact-container__title-h1-animateOut"}>
-          {language ? 'Entre em Contato !' : 'Contact me !'}
+          {language ? 'Entre em Contato!' : 'Contact me!'}
         </h1>
       </div>
 

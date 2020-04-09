@@ -15,17 +15,6 @@
   }
 }
 
-.mobile-home-shape-up {
-  display: none;
-
-  @include respond_to(mobile) {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-  }
-}
-
 .mobile-home-shape-down {
   display: none;
 
