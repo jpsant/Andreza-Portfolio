@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactPageScroller from 'react-page-scroller';
 
 import Pagination from './components/Pagination';
+import MobileMenu from './components/MobileMenu';
 
 import Home from './sections/Home';
 import About from './sections/About';
@@ -18,17 +19,18 @@ class LandingPage extends Component {
   }
 
   handlePageChanger = (number) => {
-    this.setState({currentPage: number})
+    this.setState({ currentPage: number })
   }
 
   handleLanguageChange = () => {
     const newLanguage = !this.state.language;
-    this.setState({language: newLanguage});
+    this.setState({ language: newLanguage });
   }
 
-  render () {
+  render() {
     return (
       <>
+        <MobileMenu currentPage={this.state.currentPage} />
         <Pagination
           currentPage={this.state.currentPage}
           language={this.state.language}
@@ -39,7 +41,7 @@ class LandingPage extends Component {
           pageOnChange={this.handlePageChanger}
           customPageNumber={this.state.currentPage}
         >
-          <Home language={this.state.language} currentPage={this.state.currentPage} />
+          <Home languageChanger={this.handleLanguageChange} language={this.state.language} currentPage={this.state.currentPage} />
           <About language={this.state.language} currentPage={this.state.currentPage} />
           <Skills language={this.state.language} currentPage={this.state.currentPage} />
           <Contact language={this.state.language} currentPage={this.state.currentPage} />
