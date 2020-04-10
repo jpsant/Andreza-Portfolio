@@ -36,8 +36,8 @@ class LandingPage extends Component {
     if (section < 0) {
       this.setState({ aboutSection: 0 });
     }
-    else if (section >= 3) {
-      this.setState({ aboutSection: 3 });
+    else if (section >= 2) {
+      this.setState({ aboutSection: 2 });
     }
     else {
       this.setState({ aboutSection: section})

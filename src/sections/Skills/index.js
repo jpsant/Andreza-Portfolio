@@ -10,7 +10,6 @@ import Registration from '../../assets/svg/registration.svg'
 export default function SkillsSection({ language, currentPage, section }) {
   return (
     <div className="skills-container">
-      {console.log(`skills-section: ${section}`)}
       <div className="skills-container__title">
         <h1 className={currentPage === 2 ? "skills-container__title-h1 skills-container__title-h1-animateIn"
           : "skills-container__title-h1 skills-container__title-h1-animateOut"}>
