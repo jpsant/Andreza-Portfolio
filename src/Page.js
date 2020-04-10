@@ -15,7 +15,9 @@ class LandingPage extends Component {
 
   state = {
     currentPage: 0,
-    language: true
+    language: true,
+    aboutSection: 0,
+    skillsSection: 0
   }
 
   handlePageChanger = (number) => {
@@ -27,10 +29,40 @@ class LandingPage extends Component {
     this.setState({ language: newLanguage });
   }
 
+  handleAboutSection = (num) => {
+    let section = this.state.aboutSection;
+    section = section + num;
+
+    if (section < 0) {
+      this.setState({ aboutSection: 0 });
+    }
+    else if (section >= 3) {
+      this.setState({ aboutSection: 3 });
+    }
+    else {
+      this.setState({ aboutSection: section})
+    }
+  }
+
+  handleSkillSection = (num) => {
+    let section = this.state.skillsSection;
+    section = section + num;
+
+    if (section < 0) {
+      this.setState({ skillsSection: 0 });
+    }
+    else if (section >= 3) {
+      this.setState({ skillsSection: 3 });
+    }
+    else {
+      this.setState({ skillsSection: section})
+    }
+  }
+
   render() {
     return (
       <>
-        <MobileMenu currentPage={this.state.currentPage} />
+        <MobileMenu aboutHandler={this.handleAboutSection} skillsHandler={this.handleSkillSection} currentPage={this.state.currentPage} />
         <Pagination
           currentPage={this.state.currentPage}
           language={this.state.language}
@@ -42,8 +74,8 @@ class LandingPage extends Component {
           customPageNumber={this.state.currentPage}
         >
           <Home languageChanger={this.handleLanguageChange} language={this.state.language} currentPage={this.state.currentPage} />
-          <About language={this.state.language} currentPage={this.state.currentPage} />
-          <Skills language={this.state.language} currentPage={this.state.currentPage} />
+          <About section={this.state.aboutSection} language={this.state.language} currentPage={this.state.currentPage} />
+          <Skills section={this.state.skillsSection} language={this.state.language} currentPage={this.state.currentPage} />
           <Contact language={this.state.language} currentPage={this.state.currentPage} />
         </ReactPageScroller>
       </>
