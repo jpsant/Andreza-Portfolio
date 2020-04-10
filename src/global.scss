@@ -9,6 +9,7 @@ html {
   font-family: "Roboto Regular";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
 }
 
 code {
@@ -31,7 +32,6 @@ input[type="email"] {
     margin: 8px 12px !important;
   }
 }
-
 
 textarea {
   width: 453px;
@@ -193,4 +193,39 @@ textarea::placeholder {
     transform: translateX(-80px);
     opacity: 0;
   }
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-enter-active {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-exit-active {
+  transition: opacity 500ms;
+}
+
+.news-enter {
+  opacity: 0;
+}
+
+.news-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.news-exit {
+  opacity: 1;
+}
+
+.news-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
 }

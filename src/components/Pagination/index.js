@@ -90,7 +90,6 @@ export default function Pagination({ currentPage, languageChanger, section, lang
                 }}
               />
             </h2>
-
           </div>
           <LanguageSwitcher language={languageChanger} />
         </div>

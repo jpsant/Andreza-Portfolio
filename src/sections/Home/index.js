@@ -6,7 +6,7 @@ import Paws from '../../assets/svg/paws.svg';
 
 import LogoMobile from '../../assets/svg/logo-mobile.svg';
 
-export default function HomeSection({ language, currentPage, languageChanger }) {
+export default function HomeSection({ language, currentPage }) {
   return (
     <>
       <img src={LogoMobile} alt="Mobile Logo" className="mobile-logo mobile-logo-animateIn" />
