@@ -375,6 +375,15 @@
       animation: skillCardsOut 0.7s forwards 0.2s;
     }
 
+    &__skill-1:hover {
+      filter: brightness(100%);
+      box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.2);
+
+      .skills-container__skills-mobile__skill-1-image {
+        transform: translateY(-65%);
+      }
+    }
+
     &__skill-2 {
       opacity: 0;
       display: none;
@@ -426,6 +435,15 @@
       transform: translateY(0px);
       opacity: 1;
       animation: skillCardsOut 0.7s forwards 0.2s;
+    }
+
+    &__skill-2:hover {
+      filter: brightness(100%);
+      box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.2);
+
+      .skills-container__skills-mobile__skill-2-image {
+        transform: translateY(-65%);
+      }
     }
 
     &__skill-3 {
@@ -480,6 +498,15 @@
       animation: skillCardsOut 0.7s forwards 0.2s;
     }
 
+    &__skill-3:hover {
+      filter: brightness(100%);
+      box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.2);
+
+      .skills-container__skills-mobile__skill-3-image {
+        transform: translateY(-65%);
+      }
+    }
+
     &__skill-4 {
       opacity: 0;
       display: none;
@@ -531,6 +558,15 @@
       transform: translateY(0px);
       opacity: 1;
       animation: skillCardsOut 0.7s forwards 0.2s;
+    }
+
+    &__skill-4:hover {
+      filter: brightness(100%);
+      box-shadow: 4px 4px 22px rgba(0, 0, 0, 0.2);
+
+      .skills-container__skills-mobile__skill-4-image {
+        transform: translateY(-65%);
+      }
     }
   }
 }
