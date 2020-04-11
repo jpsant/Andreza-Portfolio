@@ -1,4 +1,5 @@
 import React from 'react';
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import './styles.scss';
 
 import CrossLogo from '../../assets/svg/cross-logo.svg';
@@ -8,6 +9,51 @@ import Paw from '../../assets/svg/paw.svg'
 import Registration from '../../assets/svg/registration.svg'
 
 export default function SkillsSection({ language, currentPage, section }) {
+
+  const skill1 = (
+    <div>
+      <div className={currentPage === 2 ? "skills-container__skills-mobile__skill-1 skill-1-animateIn"
+        : "skills-container__skills-mobile__skill-1 skill-1-animateOut"}>
+        <div className="skills-container__skills-mobile__skill-1-image">
+          <img src={Dog} alt="Dog svg" />
+        </div>
+      </div>
+    </div>
+  );
+
+  const skill2 = (
+    <div>
+      <div className={currentPage === 2 ? "skills-container__skills-mobile__skill-2 skill-2-animateIn"
+        : "skills-container__skills-mobile__skill-2 skill-2-animateOut"}>
+        <div className="skills-container__skills-mobile__skill-2-image">
+          <img src={Cat} alt="Cat svg" />
+        </div>
+      </div>
+    </div>
+  );
+
+  const skill3 = (
+    <div>
+      <div className={currentPage === 2 ? "skills-container__skills-mobile__skill-3 skill-3-animateIn"
+        : "skills-container__skills-mobile__skill-3 skill-3-animateOut"}>
+        <div className="skills-container__skills-mobile__skill-3-image">
+          <img src={Paw} alt="Paw svg" />
+        </div>
+      </div>
+    </div>
+  );
+
+  const skill4 = (
+    <div>
+      <div className={currentPage === 2 ? "skills-container__skills-mobile__skill-4 skill-4-animateIn"
+        : "skills-container__skills-mobile__skill-4 skill-4-animateOut"}>
+        <div className="skills-container__skills-mobile__skill-4-image">
+          <img src={Registration} alt="Registration svg" />
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="skills-container">
       <div className="skills-container__title">
@@ -18,9 +64,8 @@ export default function SkillsSection({ language, currentPage, section }) {
         </h1>
       </div>
       <div className="skills-container__skills">
-        <div
-          className={currentPage === 2 ? "skills-container__skills__skill-1 skill-1-animateIn"
-            : "skills-container__skills__skill-1 skill-1-animateOut"}>
+        <div className={currentPage === 2 ? "skills-container__skills__skill-1 skill-1-animateIn"
+          : "skills-container__skills__skill-1 skill-1-animateOut"}>
           <div className="skills-container__skills__skill-1-image">
             <img src={Dog} alt="Dog svg" />
           </div>
@@ -43,6 +88,22 @@ export default function SkillsSection({ language, currentPage, section }) {
             <img src={Registration} alt="Registration svg" />
           </div>
         </div>
+      </div>
+
+      <div className="skills-container__skills-mobile">
+        <SwitchTransition>
+          <CSSTransition
+            key={section}
+            classNames='news'
+            timeout={100}>
+            {
+              section === 0 ? skill1 :
+                section === 1 ? skill2 :
+                  section === 2 ? skill3 :
+                    section === 3 ? skill4 : null
+            }
+          </CSSTransition>
+        </SwitchTransition>
       </div>
     </div>
   )

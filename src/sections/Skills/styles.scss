@@ -20,7 +20,7 @@
     }
 
     @include respond_to(mobile) {
-      top: 18%
+      top: 10%;
     }
 
     &-h1 {
@@ -74,6 +74,7 @@
 
     @include respond_to(mobile) {
       padding-bottom: 80px;
+      display: none;
     }
 
     &__skill-1 {
@@ -95,8 +96,9 @@
       }
 
       @include respond_to(mobile) {
-       width: 200px;
-       height: 200px;
+        display: none;
+        width: 200px;
+        height: 200px;
       }
 
       &-image {
@@ -105,7 +107,7 @@
 
         img {
           width: 100px;
-          
+
           @include respond_to(medium) {
             width: 80px;
           }
@@ -126,7 +128,7 @@
     .skill-1-animateOut {
       transform: translateY(0px);
       opacity: 1;
-      animation: skillCardsOut 0.7s forwards 0.2s
+      animation: skillCardsOut 0.7s forwards 0.2s;
     }
 
     &__skill-1:hover {
@@ -178,13 +180,13 @@
     .skill-2-animateIn {
       transform: translateY(60px);
       opacity: 0;
-      animation: skillCardsIn 0.7s forwards 0.9s
+      animation: skillCardsIn 0.7s forwards 0.9s;
     }
 
     .skill-2-animateOut {
       transform: translateY(0px);
       opacity: 1;
-      animation: skillCardsOut 0.7s forwards 0.2s
+      animation: skillCardsOut 0.7s forwards 0.2s;
     }
 
     &__skill-2:hover {
@@ -224,7 +226,7 @@
 
         img {
           width: 100px;
-          
+
           @include respond_to(medium) {
             width: 80px;
           }
@@ -235,13 +237,13 @@
     .skill-3-animateIn {
       transform: translateY(60px);
       opacity: 0;
-      animation: skillCardsIn 0.7s forwards 1s
+      animation: skillCardsIn 0.7s forwards 1s;
     }
 
     .skill-3-animateOut {
       transform: translateY(0px);
       opacity: 1;
-      animation: skillCardsOut 0.7s forwards 0.2s
+      animation: skillCardsOut 0.7s forwards 0.2s;
     }
 
     &__skill-3:hover {
@@ -282,7 +284,7 @@
 
         img {
           width: 100px;
-          
+
           @include respond_to(medium) {
             width: 80px;
           }
@@ -293,13 +295,13 @@
     .skill-4-animateIn {
       transform: translateY(60px);
       opacity: 0;
-      animation: skillCardsIn 0.7s forwards 1.1s
+      animation: skillCardsIn 0.7s forwards 1.1s;
     }
 
     .skill-4-animateOut {
       transform: translateY(0px);
       opacity: 1;
-      animation: skillCardsOut 0.7s forwards 0.2s
+      animation: skillCardsOut 0.7s forwards 0.2s;
     }
 
     &__skill-4:hover {
@@ -309,6 +311,226 @@
       .skills-container__skills__skill-4-image {
         transform: translateY(-80%);
       }
+    }
+  }
+
+  &__skills-mobile {
+    display: none;
+
+    @include respond_to(mobile) {
+      display: flex;
+      align-items: center;
+      padding-top: 128px;
+    }
+
+    &__skill-1 {
+      opacity: 0;
+      display: none;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background-color: #2baa9b;
+      width: 300px;
+      height: 300px;
+      border-radius: 15px;
+      filter: brightness(70%);
+      transition: all 0.2s;
+
+      @include respond_to(medium) {
+        display: flex;
+        width: 250px;
+        height: 250px;
+      }
+
+      @include respond_to(mobile) {
+        display: flex;
+        width: 200px;
+        height: 200px;
+      }
+
+      &-image {
+        position: absolute;
+        transition: all 0.2s;
+
+        img {
+          width: 100px;
+
+          @include respond_to(medium) {
+            width: 80px;
+          }
+        }
+      }
+    }
+
+    .skill-1-animateIn {
+      transform: translateY(60px);
+      opacity: 0;
+      animation: skillCardsIn 0.7s forwards .4s;
+    }
+
+    .skill-1-animateOut {
+      transform: translateY(0px);
+      opacity: 1;
+      animation: skillCardsOut 0.7s forwards 0.2s;
+    }
+
+    &__skill-2 {
+      opacity: 0;
+      display: none;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      margin: 0 46px;
+      color: white;
+      background-color: #2baa9b;
+      width: 300px;
+      height: 300px;
+      border-radius: 15px;
+      filter: brightness(70%);
+      transition: all 0.2s;
+
+      @include respond_to(medium) {
+        display: flex;
+        width: 200px;
+        height: 200px;
+      }
+
+      @include respond_to(mobile) {
+        display: flex;
+        width: 200px;
+        height: 200px;
+      }
+
+      &-image {
+        position: absolute;
+        transition: all 0.2s;
+
+        img {
+          width: 100px;
+
+          @include respond_to(medium) {
+            width: 80px;
+          }
+        }
+      }
+    }
+
+    .skill-2-animateIn {
+      transform: translateY(60px);
+      opacity: 0;
+      animation: skillCardsIn 0.7s forwards 0.4s;
+    }
+
+    .skill-2-animateOut {
+      transform: translateY(0px);
+      opacity: 1;
+      animation: skillCardsOut 0.7s forwards 0.2s;
+    }
+
+    &__skill-3 {
+      opacity: 0;
+      display: none;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background-color: #2baa9b;
+      width: 300px;
+      height: 300px;
+      border-radius: 15px;
+      filter: brightness(70%);
+      transition: all 0.2s;
+
+      @include respond_to(medium) {
+        display: flex;
+        width: 200px;
+        height: 200px;
+      }
+
+      @include respond_to(mobile) {
+        display: flex;
+        width: 200px;
+        height: 200px;
+      }
+
+      &-image {
+        position: absolute;
+        transition: all 0.2s;
+
+        img {
+          width: 100px;
+
+          @include respond_to(medium) {
+            width: 80px;
+          }
+        }
+      }
+    }
+
+    .skill-3-animateIn {
+      transform: translateY(60px);
+      opacity: 0;
+      animation: skillCardsIn 0.7s forwards .4s;
+    }
+
+    .skill-3-animateOut {
+      transform: translateY(0px);
+      opacity: 1;
+      animation: skillCardsOut 0.7s forwards 0.2s;
+    }
+
+    &__skill-4 {
+      opacity: 0;
+      display: none;
+      margin: 0 46px;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background-color: #2baa9b;
+      width: 300px;
+      height: 300px;
+      border-radius: 15px;
+      filter: brightness(70%);
+      transition: all 0.2s;
+
+      @include respond_to(medium) {
+        display: flex;
+        width: 200px;
+        height: 200px;
+      }
+
+      @include respond_to(mobile) {
+        display: flex;
+        width: 200px;
+        height: 200px;
+      }
+
+      &-image {
+        position: absolute;
+        transition: all 0.2s;
+
+        img {
+          width: 100px;
+
+          @include respond_to(medium) {
+            width: 80px;
+          }
+        }
+      }
+    }
+
+    .skill-4-animateIn {
+      transform: translateY(60px);
+      opacity: 0;
+      animation: skillCardsIn 0.7s forwards .4s;
+    }
+
+    .skill-4-animateOut {
+      transform: translateY(0px);
+      opacity: 1;
+      animation: skillCardsOut 0.7s forwards 0.2s;
     }
   }
 }

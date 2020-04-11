@@ -95,9 +95,11 @@ export default function AboutSection({ currentPage, section }) {
               classNames='news'
               timeout={100}
             >
-              {section === 0 ? texts1
-                : section === 1 ? texts2
-                  : section === 2 ? texts3 : null}
+              {
+                section === 0 ? texts1 :
+                section === 1 ? texts2 :
+                section === 2 ? texts3 : null
+              }
             </CSSTransition>
           </SwitchTransition>
         </div>

@@ -17,7 +17,7 @@ class LandingPage extends Component {
     currentPage: 0,
     language: true,
     aboutSection: 0,
-    skillsSection: 0
+    skillsSection: 0,
   }
 
   handlePageChanger = (number) => {
@@ -40,7 +40,7 @@ class LandingPage extends Component {
       this.setState({ aboutSection: 2 });
     }
     else {
-      this.setState({ aboutSection: section})
+      this.setState({ aboutSection: section })
     }
   }
 
@@ -55,7 +55,7 @@ class LandingPage extends Component {
       this.setState({ skillsSection: 3 });
     }
     else {
-      this.setState({ skillsSection: section})
+      this.setState({ skillsSection: section })
     }
   }
 
