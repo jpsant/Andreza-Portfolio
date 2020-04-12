@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles.scss'
 
 import VectorMobileUp from '../../assets/svg/vector-mobile-up.svg';
+import VectorMobileEx from '../../assets/svg/Vector-mobile.svg';
 import VectorMobileDownRight from '../../assets/svg/vector-mobile-down-right.svg';
 import VectorMobileDownLeft from '../../assets/svg/vector-mobile-down-left.svg';
 
@@ -10,15 +11,21 @@ import ArrowButtonRight from '../../assets/svg/mobile-arrow-right.svg';
 
 export default function MobileMenu({ currentPage, aboutHandler, skillsHandler }) {
   const [mobileMenu, handleMobileMenu] = useState(false);
+  const [hamburguer, setHanburguer] = useState(false)
 
   return (
     <>
       <div className="mobile-menu">
         <img src={VectorMobileUp}
           alt="Mobile Up Vector Shape"
-          className={"mobile-menu-shape-up"}
-          style={{ width: mobileMenu ? "550px" : "180px" }} />
-        <button onClick={() => handleMobileMenu(!mobileMenu)} className="mobile-menu-button">press me!</button>
+          className="mobile-menu-shape-up"
+          style={{ width: mobileMenu ? "550px" : "130px" }} />
+        <button onClick={() => handleMobileMenu(!mobileMenu)} className={mobileMenu ? "mobile-menu-button hamburger hamburger--spin is-active" 
+        : "mobile-menu-button hamburger hamburger--spin"}>
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
       </div>
 
       <button onClick={currentPage === 1 ? () => aboutHandler(-1)

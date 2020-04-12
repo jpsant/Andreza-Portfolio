@@ -1,4 +1,5 @@
 @import "./mixins/mixin.scss";
+@import '../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
 @include font("Roboto Regular", "../fonts/Roboto-Regular");
 @include font("Roboto Bold", "../fonts/Roboto-Bold");
 
