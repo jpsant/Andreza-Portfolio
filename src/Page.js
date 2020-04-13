@@ -62,7 +62,12 @@ class LandingPage extends Component {
   render() {
     return (
       <>
-        <MobileMenu aboutHandler={this.handleAboutSection} skillsHandler={this.handleSkillSection} currentPage={this.state.currentPage} />
+        <MobileMenu aboutHandler={this.handleAboutSection}
+         skillsHandler={this.handleSkillSection}
+          currentPage={this.state.currentPage}
+          language={this.state.language}
+          languageChanger={this.handleLanguageChange}
+          section={(number) => this.handlePageChanger(number)} />
         <Pagination
           currentPage={this.state.currentPage}
           language={this.state.language}

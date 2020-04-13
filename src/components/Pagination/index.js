@@ -12,22 +12,22 @@ export default function Pagination({ currentPage, languageChanger, section, lang
         <li className={currentPage === 0 ? "selectedPage" : ''}
           style={{ backgroundColor: currentPage === 0 ? '#2BAA9B' : currentPage === 2 ? '#2BAA9B' : '' }}
         >
-          <a onClick={() => section(0)}></a>
+          <a href="#" onClick={() => section(0)}></a>
         </li>
         <li className={currentPage === 1 ? "selectedPage" : ''}
           style={{ backgroundColor: currentPage === 0 ? '#2BAA9B' : currentPage === 2 ? '#2BAA9B' : '' }}
         >
-          <a onClick={() => section(1)}></a>
+          <a href="#" onClick={() => section(1)}></a>
         </li>
         <li className={currentPage === 2 ? "selectedPage" : ''}
           style={{ backgroundColor: currentPage === 0 ? '#2BAA9B' : currentPage === 2 ? '#2BAA9B' : '' }}
         >
-          <a onClick={() => section(2)}></a>
+          <a href="#" onClick={() => section(2)}></a>
         </li>
         <li className={currentPage === 3 ? "selectedPage" : ''}
           style={{ backgroundColor: currentPage === 0 ? '#2BAA9B' : currentPage === 2 ? '#2BAA9B' : '' }}
         >
-          <a onClick={() => section(3)}></a>
+          <a href="#" onClick={() => section(3)}></a>
         </li>
       </ul>
       <div className="header-pagination">

@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
+import LanguageSwitcher from '../LanguageSwitcher';
 import './styles.scss'
 
 import VectorMobileUp from '../../assets/svg/vector-mobile-up.svg';
-import VectorMobileEx from '../../assets/svg/Vector-mobile.svg';
 import VectorMobileDownRight from '../../assets/svg/vector-mobile-down-right.svg';
 import VectorMobileDownLeft from '../../assets/svg/vector-mobile-down-left.svg';
 
 import ArrowButtonLeft from '../../assets/svg/mobile-arrow-left.svg';
 import ArrowButtonRight from '../../assets/svg/mobile-arrow-right.svg';
 
-export default function MobileMenu({ currentPage, aboutHandler, skillsHandler }) {
+export default function MobileMenu({ currentPage, aboutHandler, skillsHandler, languageChanger, language, section }) {
   const [mobileMenu, handleMobileMenu] = useState(false);
-  const [hamburguer, setHanburguer] = useState(false)
 
   return (
     <>
@@ -19,13 +18,36 @@ export default function MobileMenu({ currentPage, aboutHandler, skillsHandler })
         <img src={VectorMobileUp}
           alt="Mobile Up Vector Shape"
           className="mobile-menu-shape-up"
-          style={{ width: mobileMenu ? "550px" : "130px" }} />
-        <button onClick={() => handleMobileMenu(!mobileMenu)} className={mobileMenu ? "mobile-menu-button hamburger hamburger--spin is-active" 
-        : "mobile-menu-button hamburger hamburger--spin"}>
+          style={{ width: "130px" }} />
+        <button onClick={() => handleMobileMenu(!mobileMenu)} className={mobileMenu ? "mobile-menu-button hamburger hamburger--spin is-active"
+          : "mobile-menu-button hamburger hamburger--spin"}>
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
           </span>
         </button>
+      </div>
+
+      <div style={{ opacity: mobileMenu ? '1' : '0', visibility: mobileMenu ? 'visible' : 'hidden' }}
+        className="mobile-menu-container">
+        <LanguageSwitcher language={languageChanger} />
+        <h1 onClick={() => { handleMobileMenu(false); section(0) }}
+          style={{ opacity: currentPage === 0 ? '1' : '.5', color: currentPage === 3 ? '#2BAA9B' : '#fff' }}
+          className="mobile-menu-container__h1">
+          {language ? 'Início' : 'Home'}
+          <hr style={{borderColor: currentPage === 3 ? '#2BAA9B' : '#fff'}} />
+        </h1>
+        <h1 onClick={() => { handleMobileMenu(false); section(1) }} style={{ opacity: currentPage === 1 ? '1' : '.5', color: currentPage === 3 ? '#2BAA9B' : 'white'  }} className="mobile-menu-container__h1">
+          {language ? 'Sobre mim' : 'About me'}
+          <hr style={{borderColor: currentPage === 3 ? '#2BAA9B' : '#fff'}} />
+        </h1>
+        <h1 onClick={() => { handleMobileMenu(false); section(2) }} style={{ opacity: currentPage === 2 ? '1' : '.5', color: currentPage === 3 ? '#2BAA9B' : 'white'  }} className="mobile-menu-container__h1">
+          {language ? 'Especialidades' : 'Specialties'}
+          <hr style={{borderColor: currentPage === 3 ? '#2BAA9B' : '#fff'}} />
+        </h1>
+        <h1 onClick={() => { handleMobileMenu(false); section(3) }} style={{ opacity: currentPage === 3 ? '1' : '.5', color: currentPage === 3 ? '#2BAA9B' : 'white'  }} className="mobile-menu-container__h1">
+          {language ? 'Contato' : 'Contact'}
+          <hr style={{borderColor: currentPage === 3 ? '#2BAA9B' : '#fff'}} />
+        </h1>
       </div>
 
       <button onClick={currentPage === 1 ? () => aboutHandler(-1)

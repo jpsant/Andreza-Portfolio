@@ -11,6 +11,19 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior: none;
+  background: #2BAA9B;
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  bottom: -8px;
+}
+
+.hamburger:focus {
+  outline: none;
 }
 
 code {
