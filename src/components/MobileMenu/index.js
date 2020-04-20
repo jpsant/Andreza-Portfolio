@@ -31,22 +31,22 @@ export default function MobileMenu({ currentPage, aboutHandler, skillsHandler, l
         className="mobile-menu-container">
         <LanguageSwitcher language={languageChanger} />
         <h1 onClick={() => { handleMobileMenu(false); section(0) }}
-          style={{ opacity: currentPage === 0 ? '1' : '.5', color: currentPage === 3 ? '#2BAA9B' : '#fff' }}
+          style={{ opacity: currentPage === 0 ? '1' : '.5' }}
           className="mobile-menu-container__h1">
           {language ? 'Início' : 'Home'}
-          <hr style={{borderColor: currentPage === 3 ? '#2BAA9B' : '#fff'}} />
+          <hr/>
         </h1>
-        <h1 onClick={() => { handleMobileMenu(false); section(1) }} style={{ opacity: currentPage === 1 ? '1' : '.5', color: currentPage === 3 ? '#2BAA9B' : 'white'  }} className="mobile-menu-container__h1">
+        <h1 onClick={() => { handleMobileMenu(false); section(1) }} style={{ opacity: currentPage === 1 ? '1' : '.5' }} className="mobile-menu-container__h1">
           {language ? 'Sobre mim' : 'About me'}
-          <hr style={{borderColor: currentPage === 3 ? '#2BAA9B' : '#fff'}} />
+          <hr/>
         </h1>
-        <h1 onClick={() => { handleMobileMenu(false); section(2) }} style={{ opacity: currentPage === 2 ? '1' : '.5', color: currentPage === 3 ? '#2BAA9B' : 'white'  }} className="mobile-menu-container__h1">
+        <h1 onClick={() => { handleMobileMenu(false); section(2) }} style={{ opacity: currentPage === 2 ? '1' : '.5' }} className="mobile-menu-container__h1">
           {language ? 'Especialidades' : 'Specialties'}
-          <hr style={{borderColor: currentPage === 3 ? '#2BAA9B' : '#fff'}} />
+          <hr/>
         </h1>
-        <h1 onClick={() => { handleMobileMenu(false); section(3) }} style={{ opacity: currentPage === 3 ? '1' : '.5', color: currentPage === 3 ? '#2BAA9B' : 'white'  }} className="mobile-menu-container__h1">
+        <h1 onClick={() => { handleMobileMenu(false); section(3) }} style={{ opacity: currentPage === 3 ? '1' : '.5' }} className="mobile-menu-container__h1">
           {language ? 'Contato' : 'Contact'}
-          <hr style={{borderColor: currentPage === 3 ? '#2BAA9B' : '#fff'}} />
+          <hr/>
         </h1>
       </div>
 
