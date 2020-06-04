@@ -1,5 +1,5 @@
 @import "./mixins/mixin.scss";
-@import '../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
+@import "../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 @include font("Roboto Regular", "../fonts/Roboto-Regular");
 @include font("Roboto Bold", "../fonts/Roboto-Bold");
 
@@ -11,7 +11,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior: none;
-  background: #2BAA9B;
+  background: #2baa9b;
 }
 
 .hamburger-inner::before {
@@ -28,6 +28,10 @@ html {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+button:focus {
+  outline: 0;
 }
 
 input[type="text"],
