@@ -1,0 +1,69 @@
+@import '../../mixins/mixin.scss';
+
+.mobileFullScreenContainer {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  color: white;
+  background-color: #2BAA9B;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  transition: all .5 ease-in-out;
+  opacity: 1;
+  visibility: visible;
+
+  &-h1 {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0 10px;
+    font-family: "Roboto Bold";
+  }
+
+  &-mobileLogo {
+    width: 150px;
+    margin: 0 15px;
+    margin-top: 45px;
+    margin-bottom: 25px;
+  }
+
+  &-h2 {
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  button {
+    font-family: "Roboto Bold";
+    width: 385px;
+    height: 81px;
+    background-color: white;
+    color: #2BAA9B;
+    border: none;
+    border-radius: 20px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-top: 22px;
+
+    @include respond-to(mobile) {
+      width: 267px;
+      height: 57px;
+      font-size: 30px;
+    }
+  }
+
+  button:hover {
+    color: white !important;
+    background: transparent;
+    border: 2px solid white;
+  }
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
