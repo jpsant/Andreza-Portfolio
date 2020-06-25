@@ -6,7 +6,7 @@ import Fullscreen from "react-full-screen";
 import Pagination from "./components/Pagination";
 import MobileMenu from "./components/MobileMenu";
 
-import MobileFullScreen from './components/MobileFullScreen';
+import MobileFullScreen from "./components/MobileFullScreen";
 import Home from "./sections/Home";
 import About from "./sections/About";
 import Skills from "./sections/Skills";
@@ -24,7 +24,8 @@ class LandingPage extends Component {
 
   state = {
     currentPage: 0,
-    language: true,
+    switchLanguage: true,
+    currentLanguage: "portuguese",
     aboutSection: 0,
     skillsSection: 0,
     device: "",
@@ -36,8 +37,13 @@ class LandingPage extends Component {
   };
 
   handleLanguageChange = () => {
-    const newLanguage = !this.state.language;
-    this.setState({ language: newLanguage });
+    const newLanguage = !this.state.switchLanguage;
+
+    if (newLanguage === true) {
+      this.setState({ currentLanguage: "portuguese", switchLanguage: newLanguage });
+    } else {
+      this.setState({ currentLanguage: "english", switchLanguage: newLanguage });
+    }
   };
 
   handleAboutSection = (num) => {
@@ -67,8 +73,14 @@ class LandingPage extends Component {
   };
 
   render() {
-    let request = this.state.device === 'mobile' ?
-      <MobileFullScreen language={this.state.language} hide={this.state.isFull} setFull={() => this.setState({isFull: true})} /> : null
+    let request =
+      this.state.device === "mobile" ? (
+        <MobileFullScreen
+          language={this.state.currentLanguage}
+          hide={this.state.isFull}
+          setFull={() => this.setState({ isFull: true })}
+        />
+      ) : null;
     return (
       <>
         <Fullscreen enabled={this.state.isFull}>
@@ -77,37 +89,39 @@ class LandingPage extends Component {
             aboutHandler={this.handleAboutSection}
             skillsHandler={this.handleSkillSection}
             currentPage={this.state.currentPage}
-            language={this.state.language}
+            language={this.state.currentLanguage}
             languageChanger={this.handleLanguageChange}
             section={(number) => this.handlePageChanger(number)}
           />
           <Pagination
             currentPage={this.state.currentPage}
-            language={this.state.language}
+            language={this.state.currentLanguage}
             languageChanger={this.handleLanguageChange}
             section={(number) => this.handlePageChanger(number)}
           />
           <ReactPageScroller
             pageOnChange={this.handlePageChanger}
             customPageNumber={this.state.currentPage}
+            animationTimer={800}
+            animationTimerBuffer={40}
           >
             <Home
               languageChanger={this.handleLanguageChange}
-              language={this.state.language}
+              language={this.state.currentLanguage}
               currentPage={this.state.currentPage}
             />
             <About
               section={this.state.aboutSection}
-              language={this.state.language}
+              language={this.state.currentLanguage}
               currentPage={this.state.currentPage}
             />
             <Skills
               section={this.state.skillsSection}
-              language={this.state.language}
+              language={this.state.currentLanguage}
               currentPage={this.state.currentPage}
             />
             <Contact
-              language={this.state.language}
+              language={this.state.currentLanguage}
               currentPage={this.state.currentPage}
             />
           </ReactPageScroller>
