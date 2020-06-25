@@ -3,31 +3,29 @@ import logo from '../../assets/svg/logo.svg';
 
 import './styles.scss';
 
-import LanguageSwitcher from '../LanguageSwitcher'
+import LanguageSwitcher from '../LanguageSwitcher';
+
+import Languages from '../../multiLanguages/languages';
 
 export default function Pagination({ currentPage, languageChanger, section, language }) {
   return (
     <>
       <ul className="pagination">
         <li className={currentPage === 0 ? "selectedPage" : ''}
-          style={{ backgroundColor: currentPage === 0 ? '#2BAA9B' : currentPage === 2 ? '#2BAA9B' : '' }}
         >
-          <a href="#" onClick={() => section(0)}></a>
+          <a onClick={() => section(0)}></a>
         </li>
         <li className={currentPage === 1 ? "selectedPage" : ''}
-          style={{ backgroundColor: currentPage === 0 ? '#2BAA9B' : currentPage === 2 ? '#2BAA9B' : '' }}
         >
-          <a href="#" onClick={() => section(1)}></a>
+          <a onClick={() => section(1)}></a>
         </li>
         <li className={currentPage === 2 ? "selectedPage" : ''}
-          style={{ backgroundColor: currentPage === 0 ? '#2BAA9B' : currentPage === 2 ? '#2BAA9B' : '' }}
         >
-          <a href="#" onClick={() => section(2)}></a>
+          <a onClick={() => section(2)}></a>
         </li>
         <li className={currentPage === 3 ? "selectedPage" : ''}
-          style={{ backgroundColor: currentPage === 0 ? '#2BAA9B' : currentPage === 2 ? '#2BAA9B' : '' }}
         >
-          <a href="#" onClick={() => section(3)}></a>
+          <a onClick={() => section(3)}></a>
         </li>
       </ul>
       <div className="header-pagination">
@@ -40,7 +38,7 @@ export default function Pagination({ currentPage, languageChanger, section, lang
               className="header-pagination__container-links-h2"
               onClick={() => section(0)}
             >
-              {language ? 'Início' : 'Home'}
+              {Languages[language].menu.home}
               <hr className="header-pagination__container-links-h2-hr"
                 style={{
                   border: currentPage === 0 ? '2px solid #2E7E75' : '0',
@@ -53,7 +51,7 @@ export default function Pagination({ currentPage, languageChanger, section, lang
               className="header-pagination__container-links-h2"
               onClick={() => section(1)}
             >
-              {language ? 'Sobre mim' : 'About'}
+              {Languages[language].menu.about}
 
               <hr className="header-pagination__container-links-h2-hr"
                 style={{
@@ -67,7 +65,7 @@ export default function Pagination({ currentPage, languageChanger, section, lang
               className="header-pagination__container-links-h2"
               onClick={() => section(2)}
             >
-              {language ? 'Especialidades' : 'Specialties'}
+              {Languages[language].menu.specialties}
 
               <hr className="header-pagination__container-links-h2-hr"
                 style={{
@@ -81,7 +79,7 @@ export default function Pagination({ currentPage, languageChanger, section, lang
               className="header-pagination__container-links-h2"
               onClick={() => section(3)}
             >
-              {language ? 'Contato' : 'Contact'}
+              {Languages[language].menu.contact}
 
               <hr className="header-pagination__container-links-h2-hr"
                 style={{

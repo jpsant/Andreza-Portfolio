@@ -6,6 +6,8 @@ import Paws from '../../assets/svg/paws.svg';
 
 import LogoMobile from '../../assets/svg/logo-mobile.svg';
 
+import Languages from '../../multiLanguages/languages';
+
 export default function HomeSection({ language, currentPage }) {
   return (
     <>
@@ -24,7 +26,7 @@ export default function HomeSection({ language, currentPage }) {
             </h1>
           <h2 className={currentPage === 0 ? "home-container__text-h2 home-container__text-h2-animateIn"
             : "home-container__text-h2 home-container__text-h2-animateOut"}>
-            {language ? 'Médica Veterinária' : 'Veterinarian'}
+            {Languages[language].homeSection.profession}
           </h2>
         </div>
       </div>

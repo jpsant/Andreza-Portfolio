@@ -60,6 +60,8 @@ export default function AboutSection({ currentPage, section }) {
     </div>
   );
 
+  let texts = [texts1, texts2, texts3];
+
   return (
     <>
       <div className="about-container">
@@ -95,11 +97,7 @@ export default function AboutSection({ currentPage, section }) {
               classNames='news'
               timeout={100}
             >
-              {
-                section === 0 ? texts1 :
-                section === 1 ? texts2 :
-                section === 2 ? texts3 : null
-              }
+              {texts[section]}
             </CSSTransition>
           </SwitchTransition>
         </div>

@@ -9,6 +9,8 @@ import VectorMobileDownLeft from '../../assets/svg/vector-mobile-down-left.svg';
 import ArrowButtonLeft from '../../assets/svg/mobile-arrow-left.svg';
 import ArrowButtonRight from '../../assets/svg/mobile-arrow-right.svg';
 
+import Languages from '../../multiLanguages/languages';
+
 export default function MobileMenu({ currentPage, aboutHandler, skillsHandler, languageChanger, language, section }) {
   const [mobileMenu, handleMobileMenu] = useState(false);
 
@@ -33,19 +35,19 @@ export default function MobileMenu({ currentPage, aboutHandler, skillsHandler, l
         <h1 onClick={() => { handleMobileMenu(false); section(0) }}
           style={{ opacity: currentPage === 0 ? '1' : '.5' }}
           className="mobile-menu-container__h1">
-          {language ? 'Início' : 'Home'}
+          {Languages[language].menu.home}
           <hr/>
         </h1>
         <h1 onClick={() => { handleMobileMenu(false); section(1) }} style={{ opacity: currentPage === 1 ? '1' : '.5' }} className="mobile-menu-container__h1">
-          {language ? 'Sobre mim' : 'About me'}
+          {Languages[language].menu.about}
           <hr/>
         </h1>
         <h1 onClick={() => { handleMobileMenu(false); section(2) }} style={{ opacity: currentPage === 2 ? '1' : '.5' }} className="mobile-menu-container__h1">
-          {language ? 'Especialidades' : 'Specialties'}
+          {Languages[language].menu.specialtes}
           <hr/>
         </h1>
         <h1 onClick={() => { handleMobileMenu(false); section(3) }} style={{ opacity: currentPage === 3 ? '1' : '.5' }} className="mobile-menu-container__h1">
-          {language ? 'Contato' : 'Contact'}
+          {Languages[language].menu.contact}
           <hr/>
         </h1>
       </div>

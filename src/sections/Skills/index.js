@@ -3,10 +3,12 @@ import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import './styles.scss';
 
 import CrossLogo from '../../assets/svg/cross-logo.svg';
-import Dog from '../../assets/svg/dog.svg'
-import Cat from '../../assets/svg/cat.svg'
-import Paw from '../../assets/svg/paw.svg'
-import Registration from '../../assets/svg/registration.svg'
+import Dog from '../../assets/svg/dog.svg';
+import Cat from '../../assets/svg/cat.svg';
+import Paw from '../../assets/svg/paw.svg';
+import Registration from '../../assets/svg/registration.svg';
+
+import Languages from '../../multiLanguages/languages';
 
 export default function SkillsSection({ language, currentPage, section }) {
 
@@ -54,12 +56,14 @@ export default function SkillsSection({ language, currentPage, section }) {
     </div>
   );
 
+  let skills = [skill1, skill2, skill3, skill4];
+
   return (
     <div className="skills-container">
       <div className="skills-container__title">
         <h1 className={currentPage === 2 ? "skills-container__title-h1 skills-container__title-h1-animateIn"
           : "skills-container__title-h1 skills-container__title-h1-animateOut"}>
-          {language ? 'Especialidades' : 'Specialties'}
+          {Languages[language].skillsSection.title}
           <img src={CrossLogo} alt="Cross Logo" />
         </h1>
       </div>
@@ -96,12 +100,7 @@ export default function SkillsSection({ language, currentPage, section }) {
             key={section}
             classNames='news'
             timeout={100}>
-            {
-              section === 0 ? skill1 :
-                section === 1 ? skill2 :
-                  section === 2 ? skill3 :
-                    section === 3 ? skill4 : null
-            }
+            {skills[section]}
           </CSSTransition>
         </SwitchTransition>
       </div>

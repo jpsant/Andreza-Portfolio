@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles.scss';
 
 import ContactDivider from '../../assets/svg/contact-divider.svg'
@@ -9,32 +9,34 @@ import Twitter from '../../assets/svg/twitter.svg';
 
 import Form from '../../components/ContactForm';
 
+import Languages from '../../multiLanguages/languages';
+
 export default function ContactSection({ language, currentPage }) {
   return (
     <div className="contact-container">
       <div className="contact-container__title">
         <h1 className={currentPage === 3 ? "contact-container__title-h1 contact-container__title-h1-animateIn"
           : "contact-container__title-h1 contact-container__title-h1-animateOut"}>
-          {language ? 'Entre em Contato!' : 'Contact me!'}
+          {Languages[language].contactSection.title}
         </h1>
       </div>
 
       <div className="contact-container__info">
         <div className={currentPage === 3 ? "contact-container__info__social contact-container__info__social-animateIn"
           : "contact-container__info__social contact-container__info__social-animateOut"}>
-          <h1>{language ? 'Siga-me nas redes sociais.' : 'Follow me on social media.'}</h1>
+          <h1>{Languages[language].contactSection.social}</h1>
           <div className="contact-container__info__social-container">
-            <a href="#">
-              <img src={Facebook} alt="" />
+            <a href={null}>
+              <img src={Facebook} alt="Facebook logo" />
             </a>
-            <a href="#">
-              <img src={Instagram} alt="" />
+            <a href={null}>
+              <img src={Instagram} alt="Instagram logo" />
             </a>
-            <a href="#">
-              <img src={Linkedin} alt="" />
+            <a href={null}>
+              <img src={Linkedin} alt="Linkedin logo" />
             </a>
-            <a href="#">
-              <img src={Twitter} alt="" />
+            <a href={null}>
+              <img src={Twitter} alt="Twitter logo" />
             </a>
           </div>
         </div>
@@ -46,19 +48,19 @@ export default function ContactSection({ language, currentPage }) {
 
         <div className={currentPage === 3 ? "contact-container__info-mobile-social contact-container__info-mobile-social-animateIn"
         : "contact-container__info-mobile-social contact-container__info-mobile-social-animateOut"}>
-          <h1>{language ? 'Siga-me nas redes sociais.' : 'Follow me on social media.'}</h1>
+          <h1>{Languages[language].contactSection.social}</h1>
           <div className="contact-container__info-mobile-social-container">
-            <a href="#">
-              <img src={Facebook} alt="" />
+            <a href={null}>
+              <img src={Facebook} alt="Facebook logo" />
             </a>
-            <a href="#">
-              <img src={Instagram} alt="" />
+            <a href={null}>
+              <img src={Instagram} alt="Instagram logo" />
             </a>
-            <a href="#">
-              <img src={Linkedin} alt="" />
+            <a href={null}>
+              <img src={Linkedin} alt="Linkedin logo" />
             </a>
-            <a href="#">
-              <img src={Twitter} alt="" />
+            <a href={null}>
+              <img src={Twitter} alt="Twitter logo" />
             </a>
           </div>
         </div>
