@@ -14,7 +14,7 @@
     "react-page-scroller": "^2.0.2-beta",
     "react-scripts": "3.4.1",
     "react-transition-group": "^4.3.0",
-    "ua-parser-js": "^0.7.21"
+    "ua-parser-js": "^0.7.33"
   },
   "scripts": {
     "start": "react-scripts start",
